@@ -1,0 +1,71 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'home/login.css' %}">
+</head>
+<body>
+
+    <div class="login-wrapper">
+        <div class="card">
+
+            <!-- Left Side (Login Form) -->
+            <div class="left-content">
+                <div class="login-title">
+                    <h2>Login</h2>
+                    <p>Doesn't have an account yet? <a href="#">Sign Up</a></p>
+                </div>
+
+                <div class="login-form">
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="input-group">
+                            <label>Email address</label>
+                            <input type="text" placeholder="Enter your email">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Password</label>
+                            <div class="password-options">
+                                <input type="password" placeholder="Enter your password">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                        </div>
+
+                        <div class="remember-me">
+                            <input type="checkbox">
+                            <label>Remember me?</label>
+                        </div>
+
+                        <button type="submit" class="login-btn">LOGIN</button>
+
+                        <div class="or">or login with</div>
+
+                        <button type="button" class="google-btn">
+                            <img src="{% static 'images/google.png' %}" alt="Google logo"> Google
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Side (Welcome Message + Image) -->
+            <div class="right-content">
+                <div class="right-inner">
+                    <h1>Welcome Back!</h1>
+                    <p>Sign in to find your way around campus effortlessly.</p>
+                    <div class="image-container">
+                        <img src="{% static 'images/adnupixel.png' %}" alt="Campus Image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
